@@ -1,9 +1,23 @@
-
+import React from 'react'
+import './App.css';
+import Navbar from './component/Navbar'
+import Country from "./component/Country";
+import data from './data'
 function App() {
   return (
     <div className="App">
-      <h3>Travel Journal</h3>
+      <div className="App-country">
+      <Navbar/>
+     
+      {
+        data.map((data, index) => (
+          <Country travelData={data} key={index}/>
+        ))
+      }
+    
+      </div>
     </div>
+   
   );
 }
 
